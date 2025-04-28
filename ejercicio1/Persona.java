@@ -26,6 +26,67 @@ public class Persona {
         this.peso = peso;
         this.altura = altura;
     }
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public int getEdad() {
+        return edad;
+    }
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+    public char getSexo() {
+        return sexo;
+    }
+    public void setSexo(char sexo) {
+        this.sexo = sexo;
+    }
+    public double getPeso() {
+        return peso;
+    }
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+    public double getAltura() {
+        return altura;
+    }
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+    public int calcularIMC(){
+        double imc = peso/ (altura*altura);
+        if(imc < 18.5){
+            return -1;
+        }
+        else if(imc > 25){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+    public boolean esMayorDeEdad(){
+        if(edad >= 18){
+            return true;        
+        }
+        else{
+            return false;
+        }
+    }
+    private String comprobarSexo(char sexo){
+        if(sexo == 'H' || sexo == 'M'){
+            return "Sexo correcto";
+        }
+        else{
+            return "Sexo incorrecto, se asigna H por defecto";
+        }
+    }
+    public String toString(){
+        return "Nombre: " + nombre + "\nEdad: " + edad + "\nSexo: " + sexo + "\nPeso: " + peso + "\nAltura: " + altura;
+    }
 
 
     
