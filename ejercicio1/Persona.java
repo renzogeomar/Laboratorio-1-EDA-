@@ -18,6 +18,7 @@ public class Persona {
         this.sexo = sexo;
         this.peso = 0.0;
         this.altura = 0.0;
+        System.out.println(comprobarSexo(sexo));
     }
     public Persona(String nombre, int edad, char sexo, double peso, double altura){
         this.nombre = nombre;
@@ -25,6 +26,7 @@ public class Persona {
         this.sexo = sexo;
         this.peso = peso;
         this.altura = altura;
+        System.out.println(comprobarSexo(sexo));
     }
     public String getNombre() {
         return nombre;
@@ -85,7 +87,7 @@ public class Persona {
         }
     }
     public String toString(){
-        return "Nombre: " + nombre + "\nEdad: " + edad + "\nSexo: " + sexo + "\nPeso: " + peso + "\nAltura: " + altura;
+        return "Nombre: " + nombre + " Edad: " + edad + " Sexo: " + sexo + " Peso: " + peso + " Altura: " + altura;
     }
 
 
