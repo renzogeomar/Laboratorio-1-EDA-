@@ -82,7 +82,7 @@ public class Coleccion {
         }
         return listado;
     }
-    public ArrayList<Persona> condicionPeso(){
+    public ArrayList<Persona> condicionPeso(String condicion){
         ArrayList<Persona> pesoIdeal = new ArrayList<>();
         ArrayList<Persona> bajoPeso = new ArrayList<>();
         ArrayList<Persona> sobrePeso = new ArrayList<>();
@@ -91,18 +91,33 @@ public class Coleccion {
             if (p.calcularIMC() == 0){
                 System.out.println("La persona " + p.getNombre() + " tiene un peso ideal");
                 pesoIdeal.add(p);
-                return pesoIdeal;
             }
             else if(p.calcularIMC() == 1){
                 System.out.println("La persona " + p.getNombre() + " tiene un sobrepeso.");
                 sobrePeso.add(p);
-                return sobrePeso;
             }
             else{
                 System.out.println("La persona " + p.getNombre() + " tiene bajo peso.");
                 bajoPeso.add(p);
             }
+        }
+        if (condicion.equalsIgnoreCase("pesoIdeal")) {
+            return pesoIdeal;
+        } 
+        else if (condicion.equalsIgnoreCase("bajoPeso")) {
             return bajoPeso;
+        } 
+        else if (condicion.equalsIgnoreCase("sobrePeso")) {
+            return sobrePeso;
+        } 
+        else {
+            System.out.println("Condición no válida. Retornando lista vacía.");
+            return new ArrayList<>();
         }
     }
+    public int longitud(){
+        return arrPersona.size();
+    }
+    
+
 }
