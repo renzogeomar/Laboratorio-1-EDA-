@@ -22,12 +22,12 @@ public class testPersona {
         Persona persona4 = new Persona(nombre, edad, sexo, peso, altura);
         System.out.println(persona4);
         //Calcular el IMC de la persona4
-        if(persona4.calcularIMC() == 1) {
-            System.out.println(persona4.getNombre() + " tiene un peso ideal.");
-        } else if (persona4.calcularIMC() == -1) {
+        if(persona4.calcularIMC() == -1) {
+            System.out.println(persona4.getNombre() + " tiene bajo peso.");
+        } else if (persona4.calcularIMC() == 1) {
             System.out.println(persona4.getNombre() + " tiene sobrepeso.");
         } else {
-            System.out.println(persona4.getNombre() + " tiene bajo peso.");
+            System.out.println(persona4.getNombre() + " tiene un peso ideal.");
         }
         //Comprobar si la persona4 es mayor de edad
         if(persona4.esMayorDeEdad()) {
