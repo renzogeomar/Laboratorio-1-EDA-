@@ -82,4 +82,27 @@ public class Coleccion {
         }
         return listado;
     }
+    public ArrayList<Persona> condicionPeso(){
+        ArrayList<Persona> pesoIdeal = new ArrayList<>();
+        ArrayList<Persona> bajoPeso = new ArrayList<>();
+        ArrayList<Persona> sobrePeso = new ArrayList<>();
+        for (int i=0 ; i<arrPersona.size(); i++){
+            Persona p= arrPersona.get(i);
+            if (p.calcularIMC() == 0){
+                System.out.println("La persona " + p.getNombre() + " tiene un peso ideal");
+                pesoIdeal.add(p);
+                return pesoIdeal;
+            }
+            else if(p.calcularIMC() == 1){
+                System.out.println("La persona " + p.getNombre() + " tiene un sobrepeso.");
+                sobrePeso.add(p);
+                return sobrePeso;
+            }
+            else{
+                System.out.println("La persona " + p.getNombre() + " tiene bajo peso.");
+                bajoPeso.add(p);
+            }
+            return bajoPeso;
+        }
+    }
 }
