@@ -61,13 +61,13 @@ public class Persona {
     public int calcularIMC(){
         double imc = peso/ (altura*altura);
         if(imc < 18.5){
-            return -1;
+            return -1; // bajo peso
         }
         else if(imc > 25){
-            return 1;
+            return 1; // sobrepeso
         }
         else{
-            return 0;
+            return 0; // peso ideal
         }
     }
     public boolean esMayorDeEdad(){

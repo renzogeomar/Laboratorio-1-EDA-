@@ -60,10 +60,26 @@ public class Coleccion {
         }
         return mayores;
     }
-    
-
-
-
-
-    
+    public ArrayList<Persona> pesoIdeal(){
+        ArrayList<Persona> pesoIdeal = new ArrayList<>();
+        for (int i=0 ; i<arrPersona.size(); i++){
+            Persona p= arrPersona.get(i);
+            if (p.calcularIMC() == 0){
+                System.out.println("La persona " + p.getNombre() + " tiene un peso ideal");
+                pesoIdeal.add(p);
+            }
+            else{
+                System.out.println("La persona " + p.getNombre() + " no tiene un peso ideal.");
+            }
+        }
+        return pesoIdeal;
+    }
+    @Override
+    public String toString(){
+        String listado = "Listado de personas:\n";
+        for (Persona p : arrPersona) {
+            listado += p.toString() + "\n";
+        }
+        return listado;
+    }
 }
