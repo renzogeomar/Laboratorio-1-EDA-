@@ -5,12 +5,15 @@ public class Coleccion {
     private ArrayList<Persona> arrPersona;
     private int contador;
     public Coleccion() {
-        arrPersona = new ArrayList<Persona>();
+        arrPersona = new ArrayList<Persona>(10);
         contador = 10;
     }
     public Coleccion(int contador) {
-        arrPersona = new ArrayList<Persona>();
+        arrPersona = new ArrayList<Persona>(contador);
         this.contador = contador;
+    }
+    public ArrayList<Persona> getArrPersona() {
+        return arrPersona;
     }
     public void agregarPersona(Persona persona){
         if(arrPersona.size() < contador) {
@@ -22,14 +25,12 @@ public class Coleccion {
     public int buscarPersona(Persona persona){
         for (int i=0 ; i<arrPersona.size(); i++){
             Persona p= arrPersona.get(i);
-            if (p.getNombre().equals(person.getNombre()) && p.getEdad() == persona.getEdad() && p.getSexo() == persona.getSexo()){
+            if (p.getNombre().equals(p.getNombre()) && p.getEdad() == persona.getEdad() && p.getSexo() == persona.getSexo()){
                 System.out.println("La persona " + persona.getNombre() + " se encuentra en la posición " + i + " de la colección.");
                 return i;
             }
-            else{
-                return -1;
-            }
-        }
+        }    
+            return -1;
     }
     public void eliminarPersona(Persona persona) {
         int index = buscarPersona(persona);
@@ -118,6 +119,7 @@ public class Coleccion {
     public int longitud(){
         return arrPersona.size();
     }
-    
+
+
 
 }
